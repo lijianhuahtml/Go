@@ -72,11 +72,12 @@ func clientWriter(conn net.Conn, ch <-chan string) {
 }
 
 func main() {
-	listener, err := net.Listen("tcp", "localhost:8000") // 创建监听localhost:8000 端口
+	listener, err := net.Listen("tcp", "0.0.0.0:8000") // 创建监听localhost:8000 端口
 	if err != nil {
 		fmt.Println("Failed to create listener:", err)
 		return
 	}
+	fmt.Println("-------start-------")
 	defer listener.Close()
 
 	go broadcaster() // 启动广播器

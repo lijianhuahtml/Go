@@ -11,7 +11,8 @@ import (
 func main() {
 	localAddr := &net.TCPAddr{IP: net.IPv4(127, 0, 0, 1), Port: 20002} // 设置本地IP地址和端口号
 	dialer := &net.Dialer{LocalAddr: localAddr}                        // 创建Dialer结构体并设置LocalAddr字段
-	conn, err := dialer.Dial("tcp", "127.0.0.1:8000")
+
+	conn, err := dialer.Dial("tcp", "8.138.115.214:8000")
 	if err != nil {
 		fmt.Println("err:", err)
 		return
